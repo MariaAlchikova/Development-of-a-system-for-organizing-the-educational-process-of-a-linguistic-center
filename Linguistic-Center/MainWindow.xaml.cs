@@ -20,9 +20,6 @@ namespace Linguistic_Center
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
+        
     }
 }

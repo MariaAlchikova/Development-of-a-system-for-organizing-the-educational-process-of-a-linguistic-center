@@ -7,6 +7,36 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <TabControl HorizontalAlignment="Left" Height="328" Margin="-2,-1,-5.333,-6.333" VerticalAlignment="Top" Width="526" RenderTransformOrigin="0.5,0.5">
+            <TabControl.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.285"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TabControl.RenderTransform>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5">
+                    <Image Margin="-35,0,-1365,-900" Source="Image2.png" Stretch="Fill"/>
+                    <Frame Content="Подбор языковых курсов" HorizontalAlignment="Left" Height="29" Margin="182,10,0,0" VerticalAlignment="Top" Width="241"/>
+                    <Frame Content="Выберите язык курса (английский, немецкий, &#xD;&#xA;французский, испанский, китайский, японский):" HorizontalAlignment="Left" Height="35" Margin="20,38,0,0" VerticalAlignment="Top" Width="322"/>
+                    <Frame Content="Ваш уровень владения &#xD;&#xA;языком (zero, A, B, C):" HorizontalAlignment="Left" Height="31" Margin="20,123,0,0" VerticalAlignment="Top" Width="175"/>
+                    <Frame Content="Ваш возраст:" HorizontalAlignment="Left" Height="31" Margin="20,169,0,0" VerticalAlignment="Top" Width="94"/>
+                    <Frame Content="Удобная станция метро &#xD;&#xA;(Тверская, Марксистская, Трубная):" HorizontalAlignment="Left" Height="31" Margin="20,206,0,0" VerticalAlignment="Top" Width="198"/>
+                    <Frame Content="Результат поиска:" HorizontalAlignment="Left" Height="32" Margin="316,72,0,0" VerticalAlignment="Top" Width="160"/>
+                    <TextBox HorizontalAlignment="Left" Height="31" Margin="20,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160"/>
+                    <TextBox HorizontalAlignment="Left" Height="31" Margin="168,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72"/>
+                    <TextBox HorizontalAlignment="Left" Height="30" Margin="105,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="67"/>
+                    <TextBox HorizontalAlignment="Left" Height="31" Margin="20,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166"/>
+                    <TextBox HorizontalAlignment="Left" Height="114" Margin="316,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
+                    <Button Content="Подобрать" HorizontalAlignment="Left" Height="31" Margin="395,242,0,0" VerticalAlignment="Top" Width="101"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Window>
