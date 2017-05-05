@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace language_center
+namespace Linguistic_Center
 {
-    class Groups
+    class Courses
     {
         private string _language;
         private string _level;
-        private int _age;
+        private string _age;
         private string _metro;
 
 
@@ -23,7 +23,9 @@ namespace language_center
             }
             set
             {
-                _language = value;
+                if (!String.IsNullOrWhiteSpace(value))
+                    _language = value;
+                else throw new Exception();
             }
         }
 
@@ -36,11 +38,13 @@ namespace language_center
             }
             set
             {
-                _level = value;
+                if (!String.IsNullOrWhiteSpace(value))
+                    _level = value;
+                else throw new Exception();
             }
         }
 
-        public int Age
+        public string Age
         {
             get
 
@@ -49,7 +53,9 @@ namespace language_center
             }
             set
             {
-                _age = value;
+                if (!String.IsNullOrWhiteSpace(value))
+                    _age = value;
+                else throw new Exception();
             }
         }
 
@@ -62,12 +68,14 @@ namespace language_center
             }
             set
             {
-                _metro = value;
+                if (!String.IsNullOrWhiteSpace(value))
+                    _metro = value;
+                else throw new Exception();
             }
         }
 
 
-        public Groups(string lng, string lvl, int age, string met)
+        public Courses (string lng, string lvl, string age, string met)
         {
 
             Language = lng;

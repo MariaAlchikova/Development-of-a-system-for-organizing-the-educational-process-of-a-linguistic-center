@@ -7,30 +7,27 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid Margin="0,0,-6.333,-19.333">
-        <TabControl HorizontalAlignment="Left" Height="330" VerticalAlignment="Top" Width="525">
+        <TabControl Height="330" VerticalAlignment="Top" Margin="0,0,10,0">
             <TabItem Header="Подбор">
-                <Grid Background="#FFE5E5E5">
-                    <Image Margin="0,0,0.333,0" Source="Image2.png" Stretch="Fill"/>
-                    <Frame Content="Подбор языковой группы" HorizontalAlignment="Left" Height="37" Margin="173,10,0,0" VerticalAlignment="Top" Width="173"/>
-                    <Frame Content="Выберите язык курса (английский, немецкий, &#xD;&#xA;испанский, французский, китайский, японский):" HorizontalAlignment="Left" Height="42" Margin="10,34,0,0" VerticalAlignment="Top" Width="283"/>
-                    <Frame Content="Введите свой уровень владения языком&#xA;(zero , A, B, C):" HorizontalAlignment="Left" Height="37" Margin="10,104,0,0" VerticalAlignment="Top" Width="233"/>
-                    <Frame Content="Введите свой возраст:" HorizontalAlignment="Left" Height="34" Margin="10,166,0,0" VerticalAlignment="Top" Width="140"/>
-                    <Frame Content="Удобная станция метро&#xD;&#xA;(Тверская, Марксистская, Трубная):" HorizontalAlignment="Left" Height="36" Margin="10,205,0,0" VerticalAlignment="Top" Width="204"/>
-                    <TextBox HorizontalAlignment="Left" Height="19" Margin="94,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66"/>
-                    <TextBox HorizontalAlignment="Left" Height="20" Margin="140,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50"/>
-                    <TextBox HorizontalAlignment="Left" Height="25" Margin="10,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188"/>
-                    <TextBox HorizontalAlignment="Left" Height="23" Margin="10,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188"/>
-                    <Button Content="Подобрать" HorizontalAlignment="Left" Height="29" Margin="392,251,0,0" VerticalAlignment="Top" Width="99"/>
-                    <Frame Content="Результат поиска:" HorizontalAlignment="Left" Height="30" Margin="298,69,0,0" VerticalAlignment="Top" Width="167"/>
-                    <TextBox HorizontalAlignment="Left" Height="133" Margin="298,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
-                </Grid>
-            </TabItem>
-            <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5" Margin="0,0,0.333,0">
-                    <Image Margin="-70,0,-569,-224" Source="Image3.png" Stretch="Fill"/>
-                    <TextBox HorizontalAlignment="Left" Height="29" Margin="80,77,0,0" TextWrapping="Wrap" Text="Введите пароль:" VerticalAlignment="Top" Width="149"/>
-                    <PasswordBox HorizontalAlignment="Left" Height="29" Margin="277,77,0,0" VerticalAlignment="Top" Width="147"/>
-                    <Label Content="                 Для сотрудников лингивистического центра" HorizontalAlignment="Left" Height="30" Margin="80,10,0,0" VerticalAlignment="Top" Width="366"/>
+                <Grid Background="#FFE5E5E5" Margin="0,5,-11.333,-1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="31*"/>
+                        <ColumnDefinition Width="488*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.ColumnSpan="2" Margin="0,0,0,-152" Source="Image5.png" Stretch="Fill"/>
+                    <Image Margin="18,10,26,10" Source="Image1.png" Stretch="Fill" Grid.ColumnSpan="2"/>
+                    <TextBlock TextAlignment="Center" FontFamily="Cooper Black" FontSize="24" Margin="20.667,25,35,237" Grid.Column="1" Text="Перечень языковых курсов"/>
+                    <TextBox HorizontalAlignment="Left" Background="LightGoldenrodYellow" FontFamily="Cooper Black" Height="87" Margin="154.667,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" Grid.Column="1"/>
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="118" Margin="154.667,156,0,0" VerticalAlignment="Top" Width="299"/>
+                    <Button x:Name="AddCourses" Grid.Column="1" FontSize="16" Background="Chocolate" FontFamily="Cooper Black" Click="AddCourses_Click" Content="Добавить " Margin="20.667,61,370,206"/>
+                    <Button x:Name="DeleteCourses" Grid.Column="1" FontSize="16" Background="Chocolate" FontFamily="Cooper Black"  Click="DeleteCourses_Click" Content="Удалить" Margin="20.667,117,370,150"/>
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="50" Margin="154.667,224,0,0" VerticalAlignment="Top" Width="299"/>
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="56" Margin="20.667,163,0,0" VerticalAlignment="Top" Width="433"/>
+                    <Button Content="Найти" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Cooper Black" Foreground="Black" Background="Chocolate" FontSize="16" Height="31" Margin="20.667,176,0,0" VerticalAlignment="Top" Width="98"/>
+                    <TextBox Grid.Column="1" HorizontalAlignment="Left" FontFamily="Cooper Black" Background="LightGoldenrodYellow" Height="87" Margin="154.667,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299"/>
+                    <ScrollViewer Grid.Column="1" HorizontalAlignment="Left" Height="85" Margin="435.667,176,0,0" VerticalAlignment="Top" Width="18"/>
+                    <ScrollViewer Grid.Column="1" HorizontalAlignment="Left" Height="85" Margin="435.667,63,0,0" VerticalAlignment="Top" Width="18"/>
+                    <Button Content="Сохранить" Grid.Column="1" HorizontalAlignment="Left" FontFamily="Cooper Black" Foreground="Black" Background="Chocolate" FontSize="16" Height="31" Margin="20.667,230,0,0" VerticalAlignment="Top" Width="98"/>
                 </Grid>
             </TabItem>
         </TabControl>
