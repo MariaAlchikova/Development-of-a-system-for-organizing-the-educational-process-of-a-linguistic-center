@@ -24,12 +24,13 @@ namespace Linguistic_Center
     {
         private List<Courses> courses = new List<Courses>();
 
-        internal List<Courses> Courses { get => courses; set => courses = value; }  // инкапсуляция поля
+        //internal List<Courses> Courses { get => courses; set => courses = value; }  // инкапсуляция поля
 
         public MainWindow()
         {
             InitializeComponent();
-
+        
+      
             using (FileStream fs = new FileStream(@"../../courses.txt", FileMode.Open, FileAccess.Read))
             {
                 string[] data;
@@ -51,12 +52,11 @@ namespace Linguistic_Center
 
             foreach (Courses crs in courses)
                 coursesList.Items.Add(crs);
-
+            
 
 
         }
 
-        
 
         public void NewCourses()
         {
@@ -78,25 +78,25 @@ namespace Linguistic_Center
         }
 
 
-        private void AddCourses_Click(object sender, RoutedEventArgs e)
-        {
-            AddCoursesWindow wnd = new AddCoursesWindow(this);
-            wnd.Show();
-        }
+        //private void AddCourses_Click(object sender, RoutedEventArgs e)
+        //{
+        //    AddCoursesWindow wnd = new AddCoursesWindow(this);
+        //    wnd.Show();
+        //}
 
-        private void SearchCourses_Click(object sender, RoutedEventArgs e)
-        {
-            foreach (Courses crs in courses)
-            {
-                if (crs.Language == searchLanguage.Text)
-                {
-                    coursesInfo.Text = crs.Language + " " + crs.Level + " " + crs.Age + " " + crs.Metro;
-                    break;
-                }
-                else
-                    coursesInfo.Text = "Указанного курса не существует";
-            }
-        }
+        //private void SearchCourses_Click(object sender, RoutedEventArgs e)
+        //{
+        //    foreach (Courses crs in courses)
+        //    {
+        //        if (crs.Language == searchLanguage.Text)
+        //        {
+        //            coursesInfo.Text = crs.Language + " " + crs.Level + " " + crs.Age + " " + crs.Metro;
+        //            break;
+        //        }
+        //        else
+        //            coursesInfo.Text = "Указанного курса не существует";
+        //    }
+        //}
 
         private void DeleteCourses_Click(object sender, RoutedEventArgs e)
         {
@@ -108,7 +108,7 @@ namespace Linguistic_Center
 
         private void SaveListToFileWithName_Click(object sender, RoutedEventArgs e)
         {
-            using (FileStream fs = new FileStream(@"../../" + SaveListFileName.Text + ".txt", FileMode.Create, FileAccess.Write))
+            using (FileStream fs = new FileStream(@"../../newcourses.txt", FileMode.Create, FileAccess.Write))
             {
 
                 StreamWriter sr = new StreamWriter(fs, Encoding.Default);
@@ -122,7 +122,7 @@ namespace Linguistic_Center
                 sr.Close();
                 fs.Close();
             }
-            coursesInfo.Text = "Данные сохранены в файл" + SaveListFileName.Text + ".txt";
+            coursesInfo.Text = "Данные сохранены в файл newcourses.txt";
         }
     }
 
