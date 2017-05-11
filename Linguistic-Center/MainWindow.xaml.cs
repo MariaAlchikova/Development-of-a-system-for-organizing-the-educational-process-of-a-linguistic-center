@@ -22,7 +22,7 @@ namespace Linguistic_Center
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Courses> courses = new List<Courses>();
+        private List<Courses> courses = new List<Courses>(); 
 
         //internal List<Courses> Courses { get => courses; set => courses = value; }  // инкапсуляция поля
 
