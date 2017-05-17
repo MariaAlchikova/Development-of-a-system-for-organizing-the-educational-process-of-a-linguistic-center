@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Linguistic_Center
 {
-    class Courses
+    public class Courses
     {
         private string _language;
         private string _level;
-        private string _age;
+        private string _group;
         private string _metro;
+        private string _id;
 
 
 
@@ -44,17 +45,17 @@ namespace Linguistic_Center
             }
         }
 
-        public string Age
+        public string Group
         {
             get
 
             {
-                return _age;
+                return _group;
             }
             set
             {
                 if (!String.IsNullOrWhiteSpace(value))
-                    _age = value;
+                    _group = value;
                 else throw new Exception();
             }
         }
@@ -74,14 +75,37 @@ namespace Linguistic_Center
             }
         }
 
+        public string ID
+        {
+            get
 
-        public Courses (string lng, string lvl, string age, string met)
+            {
+                return _id;
+            }
+            set
+            {
+                if (!String.IsNullOrWhiteSpace(value))
+                    _id = value;
+                else throw new Exception();
+            }
+        }
+
+        public Courses (string lng, string lvl, string grp, string met, string id)
         {
 
             Language = lng;
             Level = lvl;
-            Age = age;
+            Group = grp;
             Metro = met;
+            ID = id;
+        }
+
+        public string displayedCourses
+        {
+            get
+            {
+                return $"{_language} - {_level} - {_group} - {_metro} - {_id}";
+            }
         }
     }
 }

@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
+
 
 
 namespace Linguistic_Center
@@ -22,9 +24,15 @@ namespace Linguistic_Center
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Courses> courses = new List<Courses>(); 
+        private List<Courses> courses = new List<Courses>();
 
-        //internal List<Courses> Courses { get => courses; set => courses = value; }  // инкапсуляция поля
+        public List<Courses> _courses
+        {
+            get { return courses; }
+            set { courses = value; }
+        }
+
+
 
         public MainWindow()
         {
@@ -40,7 +48,7 @@ namespace Linguistic_Center
                 while (!sr.EndOfStream)
                 {
                     data = sr.ReadLine().Split(' ');
-                    crs = new Courses(data[0], data[1], data[2], data[3]);
+                    crs = new Courses(data[0], data[1], data[2], data[3], data[4]);
                     courses.Add(crs);
                 }
 
@@ -67,7 +75,7 @@ namespace Linguistic_Center
 
                 foreach (Courses crs in courses)
                 {
-                    sr.Write(crs.Language + " " + crs.Level + " " + crs.Age + " " + crs.Metro);
+                    sr.Write(crs.Language + " " + crs.Level + " " + crs.Group + " " + crs.Metro + " " + crs.ID);
                     sr.WriteLine();
                 }
 
@@ -78,25 +86,57 @@ namespace Linguistic_Center
         }
 
 
-        //private void AddCourses_Click(object sender, RoutedEventArgs e)
-        //{
-        //    AddCoursesWindow wnd = new AddCoursesWindow(this);
-        //    wnd.Show();
-        //}
+        private void AddCourses_Click(object sender, RoutedEventArgs e)
+        {
+            AdditionWindow wndw = new AdditionWindow(this);
+            wndw.Show();
+            //using (FileStream fs = new FileStream("data.xml", FileMode.Create))
+            //{
+            //    Courses course1 = new Courses("German", "C1", "adult", "Третьяковская", "abc123");
+            //    Courses course2 = new Courses("English", "B1", "children", "Университет", "abcd123");
+            //    courses.Add(course1);
+            //    courses.Add(course2);
+            //    XmlSerializer xml = new XmlSerializer(typeof(List<Courses>));
+            //    xml.Serialize(fs, courses);
+            //}
+            //Logger.Log("Добавлен новый курс");
+        }
 
-        //private void SearchCourses_Click(object sender, RoutedEventArgs e)
-        //{
-        //    foreach (Courses crs in courses)
-        //    {
-        //        if (crs.Language == searchLanguage.Text)
-        //        {
-        //            coursesInfo.Text = crs.Language + " " + crs.Level + " " + crs.Age + " " + crs.Metro;
-        //            break;
-        //        }
-        //        else
-        //            coursesInfo.Text = "Указанного курса не существует";
-        //    }
-        //}
+        private void ChangeCourses_Click(object sender, RoutedEventArgs e)
+        {
+            bool idFound = false;
+            foreach (Courses crs in courses)
+            {
+                if (crs.ID == IDforSearch.Text)
+                {
+                    idFound = true;
+                    ChangeWindow window = new ChangeWindow(this, crs);
+                    window.ShowDialog();
+                    break;
+                }
+                //else
+                //    MessageBox.Show("Курс не найден");
+            }
+            if (!idFound)
+            {
+                MessageBox.Show("Курс не найден");
+            }
+            idFound = false;
+        }
+
+        private void SearchCourses_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Courses crs in courses)
+            {
+                if (crs.ID == searchID.Text)
+                {
+                    coursesInfo.Text = crs.Language + " " + crs.Level + " " + crs.Group + " " + crs.Metro + " " + crs.ID;
+                    break;
+                }
+                else
+                    coursesInfo.Text = "Указанного курса не существует";
+            }
+        }
 
         private void DeleteCourses_Click(object sender, RoutedEventArgs e)
         {
@@ -115,7 +155,7 @@ namespace Linguistic_Center
 
                 foreach (Courses crs in courses)
                 {
-                    sr.Write(crs.Language + " " + crs.Level + " " + crs.Age + " " + crs.Metro);
+                    sr.Write(crs.Language + " " + crs.Level + " " + crs.Group + " " + crs.Metro + " " + crs.ID);
                     sr.WriteLine();
                 }
 
@@ -124,6 +164,8 @@ namespace Linguistic_Center
             }
             coursesInfo.Text = "Данные сохранены в файл newcourses.txt";
         }
+
+        
     }
 
 }

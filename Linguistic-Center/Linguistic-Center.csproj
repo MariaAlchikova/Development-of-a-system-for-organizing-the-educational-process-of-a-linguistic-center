@@ -54,8 +54,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdditionWindow.xaml.cs">
+      <DependentUpon>AdditionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeWindow.xaml.cs">
+      <DependentUpon>ChangeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Logger.cs" />
     <Compile Include="Students.cs" />
     <Compile Include="Teachers.cs" />
+    <Page Include="AdditionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
