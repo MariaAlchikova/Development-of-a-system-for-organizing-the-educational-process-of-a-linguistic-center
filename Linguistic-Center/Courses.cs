@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//19.05.17
 namespace Linguistic_Center
 {
+    [Serializable]
     public class Courses
     {
         private string _language;

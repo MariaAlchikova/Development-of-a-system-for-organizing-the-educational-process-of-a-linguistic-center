@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,9 +12,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Xml.Serialization;
 
 
 
@@ -31,14 +30,11 @@ namespace Linguistic_Center
             get { return courses; }
             set { courses = value; }
         }
-
-
-
         public MainWindow()
         {
             InitializeComponent();
-        
-      
+            LoadData();
+
             using (FileStream fs = new FileStream(@"../../courses.txt", FileMode.Open, FileAccess.Read))
             {
                 string[] data;
@@ -60,7 +56,7 @@ namespace Linguistic_Center
 
             foreach (Courses crs in courses)
                 coursesList.Items.Add(crs);
-            
+
 
 
         }
@@ -90,6 +86,7 @@ namespace Linguistic_Center
         {
             AdditionWindow wndw = new AdditionWindow(this);
             wndw.Show();
+            SaveData();
             //using (FileStream fs = new FileStream("data.xml", FileMode.Create))
             //{
             //    Courses course1 = new Courses("German", "C1", "adult", "Третьяковская", "abc123");
@@ -122,6 +119,7 @@ namespace Linguistic_Center
                 MessageBox.Show("Курс не найден");
             }
             idFound = false;
+            SaveData();
         }
 
         private void SearchCourses_Click(object sender, RoutedEventArgs e)
@@ -144,6 +142,7 @@ namespace Linguistic_Center
             coursesList.Items.Remove(crs);
             courses.Remove((Courses)crs);
             NewCourses();
+            SaveData();
         }
 
         private void SaveListToFileWithName_Click(object sender, RoutedEventArgs e)
@@ -165,7 +164,37 @@ namespace Linguistic_Center
             coursesInfo.Text = "Данные сохранены в файл newcourses.txt";
         }
 
-        
-    }
+        private void SaveData()
+        {
+            using (FileStream filest = new FileStream("../../courses.dat", FileMode.Open))
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(filest, courses);
+            }
+        }
 
+        private void LoadData()
+        {
+            try
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                using (FileStream filest = new FileStream("../../courses.dat", FileMode.OpenOrCreate))
+                {
+                    try
+                    {
+                        courses = (List<Courses>)formatter.Deserialize(filest);
+                    }
+                    catch
+                    {
+                        courses = new List<Courses>();
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка чтения из файла");
+            }
+
+        }
+    }
 }

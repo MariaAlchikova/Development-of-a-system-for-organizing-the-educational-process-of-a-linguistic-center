@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="Changes" Background="BurlyWood"  Height="400" Width="400">
     <Grid>
-        <TextBox x:Name="otherID" HorizontalAlignment="Left" Height="38" Margin="60,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="265"/>
-        <TextBox x:Name="otherLanguage" HorizontalAlignment="Left" Height="38" Margin="60,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="265"/>
-        <TextBox x:Name="otherLevel" HorizontalAlignment="Left" Height="38" Margin="60,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="265"/>
-        <TextBox x:Name="otherGroup" HorizontalAlignment="Left" Height="38" Margin="60,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="265"/>
-        <TextBox x:Name="otherMetro" HorizontalAlignment="Left" Height="38" Margin="60,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="265"/>
+        <TextBox x:Name="otherLanguage" HorizontalAlignment="Left" Height="38" Margin="60,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="265"/>
+        <TextBox x:Name="otherLevel" HorizontalAlignment="Left" Height="38" Margin="60,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="265"/>
+        <TextBox x:Name="otherGroup" HorizontalAlignment="Left" Height="38" Margin="60,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="265"/>
+        <TextBox x:Name="otherMetro" HorizontalAlignment="Left" Height="38" Margin="60,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="265"/>
+        <TextBox x:Name="otherID" HorizontalAlignment="Left" Height="38" Margin="60,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="265"/>
         <Button x:Name="SaveChanges" Content="Сохранить &#xD;&#xA;изменения" FontSize="16" Background="Chocolate" FontFamily="Cooper Black" HorizontalAlignment="Left" Height="41" Margin="119,304,0,0" VerticalAlignment="Top" Width="147" Click="SaveChanges_Click"/>
 
     </Grid>

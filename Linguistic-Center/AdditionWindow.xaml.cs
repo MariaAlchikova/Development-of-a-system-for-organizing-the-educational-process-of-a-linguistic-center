@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,31 +21,48 @@ namespace Linguistic_Center
     /// </summary>
     public partial class AdditionWindow : Window
     {
-        
-   
-            MainWindow wndw;
-            public AdditionWindow (MainWindow w)
-            {
-                wndw = w;
-                InitializeComponent();
-            }
+        MainWindow wndw;
+        public AdditionWindow(MainWindow w)
+        {
+            wndw = w;
+            InitializeComponent();
+        }
+        List<Courses> courses;
 
-            private void addCrs_Click(object sender, RoutedEventArgs e)
+        private void addCrs_Click(object sender, RoutedEventArgs e)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (FileStream filest = new FileStream("../../courses.dat", FileMode.OpenOrCreate))
             {
                 try
                 {
-                    Courses crs = new Courses(newLanguage.Text, newLevel.Text, newGroup.Text, newMetro.Text, newID.Text);
-                    wndw._courses.Add(crs);
-                    wndw.coursesList.Items.Add(crs);
-                //wndw.NewCourseFile();
-                MessageBox.Show("Курс добавлен!");
+                    courses = (List<Courses>)formatter.Deserialize(filest);
                 }
                 catch
                 {
-                    MessageBox.Show("Данные введены неверно!");
+                    courses = new List<Courses>();
                 }
-                this.Close();
             }
+
+            try
+            {
+                Courses crs = new Courses(newLanguage.Text, newLevel.Text, newGroup.Text, newMetro.Text, newID.Text);
+                wndw._courses.Add(crs);
+                wndw.coursesList.Items.Add(crs);
+                //wndw.NewCourseFile();
+                MessageBox.Show("Курс добавлен!");
+            }
+            catch
+            {
+                MessageBox.Show("Данные введены неверно!");
+            }
+            this.Close();
+            using (FileStream filest = new FileStream("../../courses.dat", FileMode.Open))
+            {
+                formatter = new BinaryFormatter();
+                formatter.Serialize(filest, courses);
+            }
+        }
     }
-    }
+}
 
