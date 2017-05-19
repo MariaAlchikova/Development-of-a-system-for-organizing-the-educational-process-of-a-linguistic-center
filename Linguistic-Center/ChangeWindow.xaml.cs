@@ -34,8 +34,8 @@ namespace Linguistic_Center
 
         private void SaveChanges_Click(object sender, RoutedEventArgs e)
         {
-            
-                    
+
+
             Courses crsNew = new Courses(otherLanguage.Text, otherLevel.Text, otherGroup.Text, otherMetro.Text, otherID.Text);
             window._courses.Remove(receivedObj);
             window._courses.Add(crsNew);
@@ -45,11 +45,10 @@ namespace Linguistic_Center
             //window.coursesList.ItemsSource = window._courses;
             MessageBox.Show("Курс изменён!");
 
-
+            Logger.Log("Изменён элемент списка");
             this.Close();
         }
 
-        
-    }
-    }
 
+    }
+}

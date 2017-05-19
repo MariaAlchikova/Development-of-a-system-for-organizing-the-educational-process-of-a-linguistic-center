@@ -35,22 +35,22 @@ namespace Linguistic_Center
             InitializeComponent();
             LoadData();
 
-            using (FileStream fs = new FileStream(@"../../courses.txt", FileMode.Open, FileAccess.Read))
-            {
-                string[] data;
-                Courses crs;
-                StreamReader sr = new StreamReader(fs, Encoding.Default);
+            //using (FileStream fs = new FileStream(@"../../courses.txt", FileMode.Open, FileAccess.Read))
+            //{
+            //    string[] data;
+            //    Courses crs;
+            //    StreamReader sr = new StreamReader(fs, Encoding.Default);
 
-                while (!sr.EndOfStream)
-                {
-                    data = sr.ReadLine().Split(' ');
-                    crs = new Courses(data[0], data[1], data[2], data[3], data[4]);
-                    courses.Add(crs);
-                }
+            //    while (!sr.EndOfStream)
+            //    {
+            //        data = sr.ReadLine().Split(' ');
+            //        crs = new Courses(data[0], data[1], data[2], data[3], data[4]);
+            //        courses.Add(crs);
+            //    }
 
-                sr.Close();
-                fs.Close();
-            }
+            //    sr.Close();
+            //    fs.Close();
+            //}
 
             NewCourses();
 
@@ -133,6 +133,7 @@ namespace Linguistic_Center
                 }
                 else
                     coursesInfo.Text = "Указанного курса не существует";
+                Logger.Log("Осуществлён поиск элемента списка");
             }
         }
 
@@ -143,6 +144,7 @@ namespace Linguistic_Center
             courses.Remove((Courses)crs);
             NewCourses();
             SaveData();
+            Logger.Log("Удалён элемент списка");
         }
 
         private void SaveListToFileWithName_Click(object sender, RoutedEventArgs e)
@@ -170,6 +172,7 @@ namespace Linguistic_Center
             {
                 BinaryFormatter formatter = new BinaryFormatter();
                 formatter.Serialize(filest, courses);
+                Logger.Log("Сохранение данных в файл");
             }
         }
 
@@ -189,6 +192,7 @@ namespace Linguistic_Center
                         courses = new List<Courses>();
                     }
                 }
+                Logger.Log("Считывание данных из файла");
             }
             catch
             {

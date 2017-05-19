@@ -62,6 +62,7 @@ namespace Linguistic_Center
                 formatter = new BinaryFormatter();
                 formatter.Serialize(filest, courses);
             }
+            Logger.Log("Добавлен новый курс");
         }
     }
 }

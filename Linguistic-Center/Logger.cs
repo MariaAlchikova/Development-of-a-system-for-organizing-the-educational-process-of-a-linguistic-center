@@ -11,7 +11,7 @@ namespace Linguistic_Center
     {
         public static void Log(string message)
         {
-            using (FileStream fs = new FileStream("log.txt", FileMode.Append, FileAccess.Write))
+            using (FileStream fs = new FileStream("logger.txt", FileMode.Append, FileAccess.Write))
             {
                 using (StreamWriter sw = new StreamWriter(fs))
                 {
