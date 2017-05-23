@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//19.05.17
+//23.05.17
 namespace Linguistic_Center
 {
     [Serializable]
@@ -91,7 +91,7 @@ namespace Linguistic_Center
             }
         }
 
-        public Courses (string lng, string lvl, string grp, string met, string id)
+        public Courses(string lng, string lvl, string grp, string met, string id)
         {
 
             Language = lng;
@@ -99,14 +99,6 @@ namespace Linguistic_Center
             Group = grp;
             Metro = met;
             ID = id;
-        }
-
-        public string displayedCourses
-        {
-            get
-            {
-                return $"{_language} - {_level} - {_group} - {_metro} - {_id}";
-            }
         }
     }
 }

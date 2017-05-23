@@ -20,7 +20,7 @@ namespace Linguistic_Center
     /// </summary>
     public partial class ChangeWindow : Window
     {
-        private List<Courses> courses = new List<Courses>();
+        List<Courses> courses;
         private Courses receivedObj;
 
         MainWindow window;
@@ -39,16 +39,15 @@ namespace Linguistic_Center
             Courses crsNew = new Courses(otherLanguage.Text, otherLevel.Text, otherGroup.Text, otherMetro.Text, otherID.Text);
             window._courses.Remove(receivedObj);
             window._courses.Add(crsNew);
-            window.coursesList.Items.Remove(receivedObj);
-            window.coursesList.Items.Add(crsNew);
+
             //window.coursesList.ItemsSource = null;
             //window.coursesList.ItemsSource = window._courses;
             MessageBox.Show("Курс изменён!");
 
             Logger.Log("Изменён элемент списка");
+
             this.Close();
         }
-
-
     }
 }
+

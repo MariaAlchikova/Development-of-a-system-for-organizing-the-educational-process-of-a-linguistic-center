@@ -21,49 +21,42 @@ namespace Linguistic_Center
     /// </summary>
     public partial class AdditionWindow : Window
     {
-        MainWindow wndw;
-        public AdditionWindow(MainWindow w)
+
+        List<Courses> coursesnew;
+        public AdditionWindow()
         {
-            wndw = w;
+
             InitializeComponent();
         }
-        List<Courses> courses;
+
 
         private void addCrs_Click(object sender, RoutedEventArgs e)
         {
             BinaryFormatter formatter = new BinaryFormatter();
-            using (FileStream filest = new FileStream("../../courses.dat", FileMode.OpenOrCreate))
+            using (FileStream filest = new FileStream("../../courses1.dat", FileMode.OpenOrCreate))
             {
                 try
                 {
-                    courses = (List<Courses>)formatter.Deserialize(filest);
+                    coursesnew = (List<Courses>)formatter.Deserialize(filest);
                 }
                 catch
                 {
-                    courses = new List<Courses>();
+                    coursesnew = new List<Courses>();
                 }
             }
+            Courses crs = new Courses(newLanguage.Text, newLevel.Text, newGroup.Text, newMetro.Text, newID.Text);
 
-            try
-            {
-                Courses crs = new Courses(newLanguage.Text, newLevel.Text, newGroup.Text, newMetro.Text, newID.Text);
-                wndw._courses.Add(crs);
-                wndw.coursesList.Items.Add(crs);
-                //wndw.NewCourseFile();
-                MessageBox.Show("Курс добавлен!");
-            }
-            catch
-            {
-                MessageBox.Show("Данные введены неверно!");
-            }
-            this.Close();
-            using (FileStream filest = new FileStream("../../courses.dat", FileMode.Open))
+            coursesnew.Add(crs);
+
+            using (FileStream filest = new FileStream("../../courses1.dat", FileMode.Open))
             {
                 formatter = new BinaryFormatter();
-                formatter.Serialize(filest, courses);
+                formatter.Serialize(filest, coursesnew);
             }
             Logger.Log("Добавлен новый курс");
+            MainWindow mw = new MainWindow();
+            mw.Show();
+            this.Close();
         }
     }
 }
-
