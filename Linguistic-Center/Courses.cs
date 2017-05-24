@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//23.05.17
+//24.05.17 
 namespace Linguistic_Center
 {
     [Serializable]
@@ -25,9 +25,7 @@ namespace Linguistic_Center
             }
             set
             {
-                if (!String.IsNullOrWhiteSpace(value))
-                    _language = value;
-                else throw new Exception();
+                _language = value;
             }
         }
 
@@ -40,9 +38,7 @@ namespace Linguistic_Center
             }
             set
             {
-                if (!String.IsNullOrWhiteSpace(value))
-                    _level = value;
-                else throw new Exception();
+                _level = value;
             }
         }
 
@@ -55,9 +51,7 @@ namespace Linguistic_Center
             }
             set
             {
-                if (!String.IsNullOrWhiteSpace(value))
-                    _group = value;
-                else throw new Exception();
+                _group = value;
             }
         }
 
@@ -70,9 +64,7 @@ namespace Linguistic_Center
             }
             set
             {
-                if (!String.IsNullOrWhiteSpace(value))
-                    _metro = value;
-                else throw new Exception();
+                _metro = value;
             }
         }
 
@@ -85,9 +77,7 @@ namespace Linguistic_Center
             }
             set
             {
-                if (!String.IsNullOrWhiteSpace(value))
-                    _id = value;
-                else throw new Exception();
+                _id = value;
             }
         }
 

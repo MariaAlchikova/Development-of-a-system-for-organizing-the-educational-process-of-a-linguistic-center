@@ -54,20 +54,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AdditionWindow.xaml.cs">
-      <DependentUpon>AdditionWindow.xaml</DependentUpon>
+    <Compile Include="AdditionPage.xaml.cs">
+      <DependentUpon>AdditionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ChangeWindow.xaml.cs">
-      <DependentUpon>ChangeWindow.xaml</DependentUpon>
+    <Compile Include="AddStudentsPage.xaml.cs">
+      <DependentUpon>AddStudentsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Logger.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages.cs" />
     <Compile Include="Students.cs" />
-    <Compile Include="Teachers.cs" />
-    <Page Include="AdditionWindow.xaml">
+    <Page Include="AdditionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ChangeWindow.xaml">
+    <Page Include="AddStudentsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -110,12 +117,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

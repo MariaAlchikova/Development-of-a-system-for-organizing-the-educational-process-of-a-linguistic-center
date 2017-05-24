@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace Linguistic_Center
 {
+
+    [Serializable]
     class Students
     {
         private string _secondName;
         private string _firstName;
-        private string _monthlyPayment; // "yes" if a student paid for courses, "no" if he did not paid
-        private float _mark;
+        private string _monthlyPayment;
+        private int _mark;
 
 
 
@@ -40,7 +42,7 @@ namespace Linguistic_Center
             }
         }
 
-        public float Mark
+        public int Mark
         {
             get
             {
@@ -63,14 +65,12 @@ namespace Linguistic_Center
                 _monthlyPayment = value;
             }
         }
-        public Students(string fName, string sName, float mark, string pay)
+        public Students(string fName, string sName, int mark, string pay)
         {
             SecondName = sName;
             FirstName = fName;
             MonthlyPayment = pay;
             Mark = mark;
         }
-
-        
     }
 }
