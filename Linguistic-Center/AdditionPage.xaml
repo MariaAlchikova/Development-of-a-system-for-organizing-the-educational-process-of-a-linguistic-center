@@ -8,11 +8,11 @@
       Title="AdditionPage" Height="350" Width="525">
 
     <Grid Margin="0,0,0,-0.333">
-        <TextBox x:Name="newLanguage" HorizontalAlignment="Left" PreviewTextInput ="Language_PreviewTextInput" Height="33" Margin="138,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
-        <TextBox x:Name="newLevel" HorizontalAlignment="Left" Height="33" Margin="138,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
-        <TextBox x:Name="newGroup" HorizontalAlignment="Left" PreviewTextInput="Group_PreviewTextInput" Height="33" Margin="138,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
-        <TextBox x:Name="newMetro" HorizontalAlignment="Left" PreviewTextInput="Metro_PreviewTextInput" Height="33" Margin="138,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
-        <TextBox x:Name="newID" HorizontalAlignment="Left" Height="33" Margin="138,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
+        <TextBox x:Name="newLanguage" ToolTip="Введите язык" HorizontalAlignment="Left" PreviewTextInput ="Language_PreviewTextInput" Height="33" Margin="138,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
+        <TextBox x:Name="newLevel" ToolTip="Введите уровень" HorizontalAlignment="Left" Height="33" Margin="138,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
+        <TextBox x:Name="newGroup" ToolTip="Введите группу" HorizontalAlignment="Left" PreviewTextInput="Group_PreviewTextInput" Height="33" Margin="138,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
+        <TextBox x:Name="newMetro" ToolTip="Введите название станции метро" HorizontalAlignment="Left" PreviewTextInput="Metro_PreviewTextInput" Height="33" Margin="138,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
+        <TextBox x:Name="newID" ToolTip="Введите ID курса" HorizontalAlignment="Left" Height="33" Margin="138,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
         <Button x:Name="addCrs" Content="Добавить" FontSize="16" Background="Chocolate" FontFamily="Cooper Black" HorizontalAlignment="Left" Height="31" Margin="236,292,0,0" VerticalAlignment="Top" Width="93" Click="addCrs_Click"/>
 
     </Grid>

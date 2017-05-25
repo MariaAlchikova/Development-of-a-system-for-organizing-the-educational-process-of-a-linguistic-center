@@ -11,6 +11,7 @@ namespace Linguistic_Center
         private static MainPage _mainPage = new MainPage();
         private static AdditionPage _additionPage = new AdditionPage();
         private static AddStudentsPage _addStudentsPage = new AddStudentsPage();
+        private static LoginPage _loginPage = new LoginPage();
 
 
         public static AdditionPage AdditionPage
@@ -36,6 +37,13 @@ namespace Linguistic_Center
             }
         }
 
-
+        public static LoginPage LoginPage
+        {
+            get
+            {
+                return _loginPage;
+            }
+        }
     }
 }
+

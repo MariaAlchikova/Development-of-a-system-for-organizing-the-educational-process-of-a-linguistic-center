@@ -23,6 +23,7 @@ namespace Linguistic_Center
     {
 
         List<Courses> coursesnew;
+        
         public AdditionPage()
         {
 
@@ -56,6 +57,16 @@ namespace Linguistic_Center
                 return;
 
             }
+
+            //for (int i = 0; i < coursesnew.Count; i++)
+            //{
+            //    if (coursesnew[i].ID.ToLower() == newID.Text.ToLower())
+
+            //    {
+            //        MessageBox.Show("Курс с таким ID уже существует!", "ERROR");
+            //        return;
+            //    }
+            //}
 
             if (string.IsNullOrWhiteSpace(newLevel.Text))
             {
@@ -125,6 +136,4 @@ namespace Linguistic_Center
         }
     }
 }
-
-
 

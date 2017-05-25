@@ -5,41 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Linguistic_Center"
         mc:Ignorable="d"
-        Title="Лингвистический центр" Height="350" Width="525">
-    <Grid Margin="0,0,-6.333,-19.333">
+        Title="Лингвистический центр" Height="640" Width="660">
+    <Grid Background="LemonChiffon" Margin="0,0,-70.667,10.333" Height="660" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="48*"/>
             <ColumnDefinition Width="127*"/>
         </Grid.ColumnDefinitions>
-        <TabControl Height="330" VerticalAlignment="Top" Margin="0,0,10,0" Grid.ColumnSpan="2">
-            <TabItem Header="Подбор">
-                <Grid Background="#FFE5E5E5" Margin="0,5,-22.333,0">
+        <TabControl Background="Bisque" Height="660" VerticalAlignment="Top"  Margin="0,0,-70.667,10.333" Grid.ColumnSpan="2" RenderTransformOrigin="0.469,0.657">
+            <TabItem Header="Курсы">
+                <Grid  Margin="0,5,-22.333,0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="32*"/>
                         <ColumnDefinition Width="49*"/>
-                        <ColumnDefinition Width="457*"/>
+                        <ColumnDefinition Width="65*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="703*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock TextAlignment="Center" FontFamily="Cooper Black" FontSize="24" Margin="18,10,37.334,251" Grid.Column="1" Text="Перечень языковых курсов" Grid.ColumnSpan="2"/>
-                    <Button x:Name="AddCourses" Grid.Column="2" FontSize="16" Background="Chocolate" FontFamily="Cooper Black" Click="AddCourses_Click" Content="Добавить " Margin="302.333,50,48.334,216"/>
-                    <Button x:Name="DeleteCourses" Grid.Column="2" FontSize="16" Background="Chocolate" FontFamily="Cooper Black"  Click="DeleteCourses_Click" Content="Удалить" Margin="302.333,97,48.334,170"/>
-                    <Button Content="Найти" Grid.Column="2" HorizontalAlignment="Left" FontFamily="Cooper Black" Foreground="Black" Background="Chocolate" Click="SearchCourses_Click" FontSize="16" Height="29" Margin="302.333,248,0,0" VerticalAlignment="Top" Width="106"/>
-                    <TextBox x:Name="coursesInfo" HorizontalAlignment="Left" Background="LightGoldenrodYellow" Height="29" Margin="16,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" Grid.ColumnSpan="3"/>
-                    <DataGrid Name="dg" HorizontalAlignment="Left" Height="188" VerticalAlignment="Top" Width="328" Grid.ColumnSpan="3" Margin="16,45,0,0"/>
-                    <TextBox x:Name="searchID" Grid.Column="2" HorizontalAlignment="Left" Height="29" Margin="302.333,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106"/>
-                    <Button x:Name="ChangeCourses" Content="Изменить" Grid.Column="2" HorizontalAlignment="Left" FontFamily="Cooper Black" Foreground="Black" Background="Chocolate" FontSize="16" Height="29" Margin="302.333,152,0,0" VerticalAlignment="Top" Width="106"/>
+                    <TextBlock TextAlignment="Center" FontFamily="Cooper Black" FontSize="24" Margin="18,10,162.333,581" Grid.Column="1" Text="Перечень языковых курсов" Grid.ColumnSpan="3"/>
+                    <Button x:Name="AddCourses" Grid.Column="3" ToolTip="Добавить" FontSize="16" Background="Chocolate" FontFamily="Cooper Black" Click="AddCourses_Click" Content="Добавить " Margin="340.667,98,189.333,483"/>
+                    <Button x:Name="DeleteCourses" Grid.Column="3" ToolTip="Удалить" FontSize="16" Background="Chocolate" FontFamily="Cooper Black"  Click="DeleteCourses_Click" Content="Удалить" Margin="340.667,174,189.333,409"/>
+                    <Button Content="Найти" Grid.Column="3" HorizontalAlignment="Left" ToolTip="Найти" FontFamily="Cooper Black" Foreground="Black" Background="Chocolate" Click="SearchCourses_Click" FontSize="16" Height="40" Margin="340.333,453,0,0" VerticalAlignment="Top" Width="165"/>
+                    <TextBox x:Name="coursesInfo" Background="Beige" HorizontalAlignment="Left" ToolTip="Найденный курс" Height="40" Margin="0,453,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" Grid.ColumnSpan="3" Grid.Column="1"/>
+                    <DataGrid Name="dg" HorizontalAlignment="Left" ToolTip="Перечень языковых курсов" Height="325" VerticalAlignment="Top" Width="328" Grid.ColumnSpan="3" Margin="0,98,0,0" Grid.Column="1"/>
+                    <TextBox x:Name="searchID" Background="Beige" Grid.Column="3" ToolTip="ID искомого курса" HorizontalAlignment="Left" Height="40" Margin="340.333,383,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
+                    <Button x:Name="ChangeCourses" Content="Изменить" ToolTip="Изменить" Grid.Column="3" HorizontalAlignment="Left" FontFamily="Cooper Black" Foreground="Black" Background="Chocolate" FontSize="16" Height="40" Margin="340.333,247,0,0" VerticalAlignment="Top" Width="165"/>
                 </Grid>
 
             </TabItem>
             <TabItem Header="Учащиеся">
-                <Grid Background="#FFE5E5E5">
-                    <TextBlock TextAlignment="Center" FontFamily="Cooper Black" FontSize="24" Margin="10,10,22.333,257"><Run Text="Учащиеся "/><Run Text="лингвистического"/><Run Text=" "/><Run Text="центра"/></TextBlock>
-                    <Button x:Name="AddStudents" FontSize="16" Background="Chocolate" FontFamily="Cooper Black" Click="AddStudents_Click" Content="Добавить " Margin="392,50,22.333,224"/>
-                    <Button x:Name="DeleteStudents" FontSize="16" Background="Chocolate" FontFamily="Cooper Black"  Click="DeleteStudents_Click" Content="Удалить" Margin="392,92,22.333,181"/>
-                    <Button x:Name="SerachStudents" Content="Найти" HorizontalAlignment="Left" FontFamily="Cooper Black" Foreground="Black" Background="Chocolate" Click="SearchStudents_Click" FontSize="16" Height="31" Margin="389,237,0,0" VerticalAlignment="Top" Width="104"/>
-                    <TextBox x:Name="searchName" HorizontalAlignment="Left" Height="31" Margin="389,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104"/>
-                    <Button x:Name="ChangeStudents" Content="Изменить" HorizontalAlignment="Left" FontFamily="Cooper Black" Foreground="Black" Background="Chocolate" FontSize="16" Height="31" Margin="392,148,0,0" VerticalAlignment="Top" Width="101"/>
-                    <TextBox x:Name="studentsInfo" HorizontalAlignment="Left" FontFamily="Cooper Black" Background="LightGoldenrodYellow" Height="33" Margin="10,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="307"/>
-                    <DataGrid x:Name="dgStudents" HorizontalAlignment="Left" Height="167" Margin="10,50,0,0" VerticalAlignment="Top" Width="307"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="27*"/>
+                        <ColumnDefinition Width="779*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock TextAlignment="Center" FontFamily="Cooper Black" FontSize="24" Margin="10,10,66.334,582" Grid.ColumnSpan="2"><Run Text="Учащиеся "/><Run Text="лингвистического"/><Run Text=" "/><Run Text="центра"/></TextBlock>
+                    <Button x:Name="AddStudents" FontSize="16" ToolTip="Добавить" Background="Chocolate" FontFamily="Cooper Black" Click="AddStudents_Click" Content="Добавить " Height="40" Margin="409,104,191.333,488" Grid.Column="1"/>
+                    <Button x:Name="DeleteStudents" ToolTip="Удалить" FontSize="16" Background="Chocolate" FontFamily="Cooper Black"  Click="DeleteStudents_Click" Content="Удалить" Height="40" Margin="409,186,191.333,406" Grid.Column="1"/>
+                    <Button x:Name="SerachStudents" Height="40" ToolTip="Найти" Content="Найти" HorizontalAlignment="Left" FontFamily="Cooper Black" Foreground="Black" Background="Chocolate" Click="SearchStudents_Click" FontSize="16" Margin="409.333,448,0,0" VerticalAlignment="Top" Width="168" Grid.Column="1"/>
+                    <TextBox x:Name="searchName" HorizontalAlignment="Left" ToolTip="Фамилия искомого учащегося" Height="40" Margin="409.333,379,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" Grid.Column="1" RenderTransformOrigin="0.55,3.677"/>
+                    <Button x:Name="ChangeStudents" Content="Изменить" ToolTip="Изменить" HorizontalAlignment="Left" FontFamily="Cooper Black" Foreground="Black" Background="Chocolate" FontSize="16" Height="40" Margin="409.333,297,0,0" VerticalAlignment="Top" Width="168" Grid.Column="1" RenderTransformOrigin="0.479,3.065"/>
+                    <TextBox x:Name="studentsInfo" ToolTip="Найденный учащийся" HorizontalAlignment="Left" FontFamily="Cooper Black" Background="LightGoldenrodYellow" Height="40" Margin="10.333,448,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="307" Grid.Column="1"/>
+                    <DataGrid x:Name="dgStudents" ToolTip="Список учащихся" HorizontalAlignment="Left" Height="306" Margin="10,104,0,0" VerticalAlignment="Top" Width="307" Grid.Column="1"/>
                 </Grid>
             </TabItem>
         </TabControl>
@@ -48,3 +53,4 @@
 </Page>
       
       
+

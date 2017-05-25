@@ -56,9 +56,9 @@ namespace Linguistic_Center
 
         private void AddCourses_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(Pages.AdditionPage);
-            LoadData();
 
+            LoadData();
+            NavigationService.Navigate(Pages.AdditionPage);
         }
 
         private void DeleteCourses_Click(object sender, RoutedEventArgs e)
@@ -74,29 +74,6 @@ namespace Linguistic_Center
             SaveData();
         }
 
-
-        //private void ChangeCourses_Click(object sender, RoutedEventArgs e)
-        //{
-        //    //bool idFound = false;
-        //    //foreach (Courses crs in courses)
-        //   // {
-        //    //    if (crs.ID == IDforSearch.Text)
-        //    //    {
-        //    //        idFound = true;
-        //    //        //ChangePage window = new ChangePage(this, crs);
-        //    //        //NavigationService.Navigate(Pages.ChangePage);
-        //    //        break;
-        //    //    }
-        //    //    //else
-        //    //    //    MessageBox.Show("Курс не найден");
-        //    //}
-        //    //if (!idFound)
-        //    //{
-        //    //    MessageBox.Show("Курс не найден");
-        //    //}
-        //    //idFound = false;
-        //    SaveData();
-        //}
 
         private void SaveData()
         {
@@ -154,7 +131,7 @@ namespace Linguistic_Center
         private void AddStudents_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(Pages.AddStudentsPage);
-            //LoadData1();
+            LoadData1();
         }
 
         private void SearchStudents_Click(object sender, RoutedEventArgs e)

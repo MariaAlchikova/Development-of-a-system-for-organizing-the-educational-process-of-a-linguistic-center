@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Linguistic_Center"
       mc:Ignorable="d"
-      Title="MainWindow" Width="567.834" Height="397.156">
+      Title="Linguistic Center" Width="660" Height="640">
 
     <Grid Margin="0,0,64.333,-19.333">
         <Grid.ColumnDefinitions>
@@ -14,7 +14,7 @@
             <ColumnDefinition Width="14*"/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Frame Name="MainFrame" Margin="0,0,-70.667,10.333" HorizontalAlignment="Left" Width="568" Grid.ColumnSpan="4" >
+        <Frame Name="MainFrame" Margin="0,0,-70.667,10.333" HorizontalAlignment="Left" Width="650" Grid.ColumnSpan="4" >
         </Frame>
     </Grid>
 </Window>

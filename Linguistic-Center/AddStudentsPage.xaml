@@ -8,9 +8,9 @@
         Title="Добавление студентов в список" Height="350" Width="525">
     <Grid>
         <Button x:Name="addSt" Content="Добавить" FontSize="16" Background="Chocolate" FontFamily="Cooper Black" HorizontalAlignment="Left" Height="31" Margin="229,267,0,0" VerticalAlignment="Top" Width="93" Click="addSt_Click"/>
-        <TextBox x:Name="newFirstName" HorizontalAlignment="Left" PreviewTextInput="NewFirstName_PreviewTextInput" Height="33" Margin="156,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
-        <TextBox x:Name="newSecondName" HorizontalAlignment="Left" Height="33" PreviewTextInput="NewSecondName_PreviewTextInput"  Margin="156,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
-        <TextBox x:Name="newMark" HorizontalAlignment="Left" Height="33" Margin="156,171,0,0" PreviewTextInput="NewMark_PreviewTextInput" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
+        <TextBox x:Name="newFirstName" ToolTip="Введите имя учащегося" HorizontalAlignment="Left" PreviewTextInput="NewFirstName_PreviewTextInput" Height="33" Margin="156,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
+        <TextBox x:Name="newSecondName" ToolTip="Введите фамилию учащегося" HorizontalAlignment="Left" Height="33" PreviewTextInput="NewSecondName_PreviewTextInput"  Margin="156,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
+        <TextBox x:Name="newMark" ToolTip="Введите оценку учащегося"  HorizontalAlignment="Left" Height="33" Margin="156,171,0,0" PreviewTextInput="NewMark_PreviewTextInput" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
         <RadioButton x:Name="YesButton" Content="Да" HorizontalAlignment="Left" Height="22" Margin="266,232,0,0" VerticalAlignment="Top" Width="56" />
         <RadioButton x:Name="NoButton"  Content="Нет" HorizontalAlignment="Left" Height="22" Margin="350,232,0,0" VerticalAlignment="Top" Width="56" />
         <TextBlock HorizontalAlignment="Left" Height="22" Margin="156,230,0,0" TextWrapping="Wrap" Text="Оплатил курс:" VerticalAlignment="Top" Width="84"/>

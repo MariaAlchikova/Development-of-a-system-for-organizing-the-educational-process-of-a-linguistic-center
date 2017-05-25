@@ -22,7 +22,9 @@ namespace Linguistic_Center
     /// </summary>
     public partial class AddStudentsPage : Page
     {
-        List<Students> studentsnew;
+        List<Students> studentsnew = new List<Students>();
+        // List<Students> students;
+
         public AddStudentsPage()
         {
             InitializeComponent();
@@ -56,10 +58,6 @@ namespace Linguistic_Center
                 _yesButton = "НЕТ";
             }
 
-            Students st = new Students(newFirstName.Text, newSecondName.Text, mark, _yesButton);
-            studentsnew.Add(st);
-
-
 
             if (string.IsNullOrWhiteSpace(newSecondName.Text))
             {
@@ -91,6 +89,16 @@ namespace Linguistic_Center
                 return;
             }
 
+
+
+            Students st = new Students(newFirstName.Text, newSecondName.Text, mark, _yesButton);
+
+            //  List<Students> students = new List<Students>();
+            studentsnew.Add(st);
+
+
+
+
             Logger.Log("Добавлен новый студент");
             NavigationService.Navigate(Pages.MainPage);
 
@@ -99,6 +107,8 @@ namespace Linguistic_Center
                 formatter = new BinaryFormatter();
                 formatter.Serialize(filest, studentsnew);
             }
+
+
         }
         private void NewMark_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
