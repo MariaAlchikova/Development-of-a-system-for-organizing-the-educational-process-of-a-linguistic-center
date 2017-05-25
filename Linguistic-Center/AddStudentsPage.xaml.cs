@@ -89,26 +89,16 @@ namespace Linguistic_Center
                 return;
             }
 
-
-
             Students st = new Students(newFirstName.Text, newSecondName.Text, mark, _yesButton);
-
-            //  List<Students> students = new List<Students>();
             studentsnew.Add(st);
-
-
-
-
-            Logger.Log("Добавлен новый студент");
-            NavigationService.Navigate(Pages.MainPage);
-
             using (FileStream filest = new FileStream("../../students1.dat", FileMode.Open))
             {
                 formatter = new BinaryFormatter();
                 formatter.Serialize(filest, studentsnew);
             }
-
-
+            Logger.Log("Добавлен новый студент");
+            MainPage main = new MainPage();
+            NavigationService.Navigate(main);
         }
         private void NewMark_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {

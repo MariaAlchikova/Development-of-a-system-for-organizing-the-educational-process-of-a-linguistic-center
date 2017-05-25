@@ -17,13 +17,12 @@ using System.Windows.Shapes;
 namespace Linguistic_Center
 {
     /// <summary>
-    /// Логика взаимодействия для AdditionWindow.xaml
+    /// Логика взаимодействия для AdditionPage.xaml
     /// </summary>
     public partial class AdditionPage : Page
     {
 
         List<Courses> coursesnew;
-        
         public AdditionPage()
         {
 
@@ -46,9 +45,7 @@ namespace Linguistic_Center
                 }
             }
 
-            Courses crs = new Courses(newLanguage.Text, newLevel.Text, newGroup.Text, newMetro.Text, newID.Text);
 
-            coursesnew.Add(crs);
 
             if (string.IsNullOrWhiteSpace(newLanguage.Text))
             {
@@ -58,15 +55,16 @@ namespace Linguistic_Center
 
             }
 
-            //for (int i = 0; i < coursesnew.Count; i++)
-            //{
-            //    if (coursesnew[i].ID.ToLower() == newID.Text.ToLower())
+            for (int i = 0; i < coursesnew.Count; i++)
+            {
+                if (coursesnew[i].ID.ToLower() == newID.Text.ToLower())
 
-            //    {
-            //        MessageBox.Show("Курс с таким ID уже существует!", "ERROR");
-            //        return;
-            //    }
-            //}
+                {
+                    MessageBox.Show("Курс с таким ID уже существует!", "ERROR");
+                    return;
+                }
+
+            }
 
             if (string.IsNullOrWhiteSpace(newLevel.Text))
             {
@@ -97,13 +95,18 @@ namespace Linguistic_Center
                 return;
             }
 
+            Courses crs = new Courses(newLanguage.Text, newLevel.Text, newGroup.Text, newMetro.Text, newID.Text);
+
+            coursesnew.Add(crs);
+
             using (FileStream filest = new FileStream("../../courses1.dat", FileMode.Open))
             {
                 formatter = new BinaryFormatter();
                 formatter.Serialize(filest, coursesnew);
             }
             Logger.Log("Добавлен новый курс");
-            NavigationService.Navigate(Pages.MainPage);
+            MainPage main = new MainPage();
+            NavigationService.Navigate(main);
         }
 
 
