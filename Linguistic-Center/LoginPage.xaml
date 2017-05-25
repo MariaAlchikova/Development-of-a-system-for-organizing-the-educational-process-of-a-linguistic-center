@@ -9,12 +9,12 @@
       Title="LoginPage">
 
     <Grid>
-        <Button x:Name="LoginButton" FontFamily="Cooper Black" FontSize="31" Background="Chocolate" Content="Вход" HorizontalAlignment="Left" Click="LoginButton_Click" Height="47" Margin="259,472,0,0" VerticalAlignment="Top" Width="147"/>
-        <TextBox x:Name="LoginBox" FontFamily="Cooper Black" FontSize="16" HorizontalAlignment="Left" Height="57" Margin="165,295,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="336"/>
-        <PasswordBox x:Name="PasswordBox" FontFamily="Cooper Black" FontSize="16" HorizontalAlignment="Left" Height="54" Margin="165,383,0,0" VerticalAlignment="Top" Width="336"/>
-        <Image Margin="0,0,0,448" Source="Image3.png" Stretch="Fill"/>
+        <Button x:Name="LoginButton" FontFamily="Cooper Black" FontSize="31" Background="Chocolate" Content="Вход" HorizontalAlignment="Left" Click="LoginButton_Click" Height="54" Margin="251,445,0,0" VerticalAlignment="Top" Width="171"/>
+        <TextBox x:Name="LoginBox" FontFamily="Cooper Black" FontSize="16" HorizontalAlignment="Left" Height="57" Margin="165,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="336"/>
+        <PasswordBox x:Name="PasswordBox" FontFamily="Cooper Black" FontSize="16" HorizontalAlignment="Left" Height="54" Margin="165,360,0,0" VerticalAlignment="Top" Width="336"/>
         <TextBlock HorizontalAlignment="Left" Foreground="Crimson" FontFamily="CooperBlack" FontSize="29" Height="41" Margin="127,223,10,0" TextWrapping="Wrap" Text="Welcome to our linguistic center!" VerticalAlignment="Top" Width="533"/>
-        <Image Margin="0,0,0,448" Source="Image3.png" Stretch="Fill"/>
+        <Image Margin="0,0,10,432" Source="Hello-in-8-languages.jpg" Stretch="Fill"/>
+        <Image Margin="0,0,10,432" Source="Hello-in-8-languages.jpg" Stretch="Fill"/>
 
     </Grid>
 </Page>

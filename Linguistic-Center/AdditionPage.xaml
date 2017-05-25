@@ -5,15 +5,21 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Linguistic_Center"
       mc:Ignorable="d"
-      Title="AdditionPage" Height="350" Width="525">
+      Title="AdditionPage" Height="640" Width="660">
 
     <Grid Margin="0,0,0,-0.333">
-        <TextBox x:Name="newLanguage" ToolTip="Введите язык" HorizontalAlignment="Left" PreviewTextInput ="Language_PreviewTextInput" Height="33" Margin="138,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
-        <TextBox x:Name="newLevel" ToolTip="Введите уровень" HorizontalAlignment="Left" Height="33" Margin="138,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
-        <TextBox x:Name="newGroup" ToolTip="Введите группу" HorizontalAlignment="Left" PreviewTextInput="Group_PreviewTextInput" Height="33" Margin="138,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
-        <TextBox x:Name="newMetro" ToolTip="Введите название станции метро" HorizontalAlignment="Left" PreviewTextInput="Metro_PreviewTextInput" Height="33" Margin="138,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
-        <TextBox x:Name="newID" ToolTip="Введите ID курса" HorizontalAlignment="Left" Height="33" Margin="138,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
-        <Button x:Name="addCrs" Content="Добавить" FontSize="16" Background="Chocolate" FontFamily="Cooper Black" HorizontalAlignment="Left" Height="31" Margin="236,292,0,0" VerticalAlignment="Top" Width="93" Click="addCrs_Click"/>
+        <TextBox x:Name="newLanguage" ToolTip="Введите язык" HorizontalAlignment="Left" PreviewTextInput ="Language_PreviewTextInput" Height="33" Margin="204,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
+        <TextBox x:Name="newLevel" ToolTip="Введите уровень" HorizontalAlignment="Left" Height="33" Margin="204,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
+        <TextBox x:Name="newGroup" ToolTip="Введите группу" HorizontalAlignment="Left" PreviewTextInput="Group_PreviewTextInput" Height="33" Margin="204,312,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
+        <TextBox x:Name="newMetro" ToolTip="Введите название станции метро" HorizontalAlignment="Left" PreviewTextInput="Metro_PreviewTextInput" Height="33" Margin="204,375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
+        <TextBox x:Name="newID" ToolTip="Введите ID курса" HorizontalAlignment="Left" Height="33" Margin="204,432,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"/>
+        <Button x:Name="addCrs" Content="Добавить" FontSize="16" Background="Chocolate" FontFamily="Cooper Black" HorizontalAlignment="Left" Height="36" Margin="266,493,0,0" VerticalAlignment="Top" Width="159" Click="addCrs_Click"/>
+        <Image Margin="0,0,0,520.333" Source="Image3.png" Stretch="Fill"/>
+        <TextBlock HorizontalAlignment="Left" FontFamily="Cooper Black" Height="22" Margin="204,150,0,0" TextWrapping="Wrap" Text="Язык:" VerticalAlignment="Top" Width="283"/>
+        <TextBlock HorizontalAlignment="Left" FontFamily="Cooper Black" Height="22" Margin="204,227,0,0" TextWrapping="Wrap" Text="Уровень:" VerticalAlignment="Top" Width="283"/>
+        <TextBlock HorizontalAlignment="Left" FontFamily="Cooper Black" Height="22" Margin="204,290,0,0" TextWrapping="Wrap" Text="Группа:" VerticalAlignment="Top" Width="283"/>
+        <TextBlock HorizontalAlignment="Left" FontFamily="Cooper Black" Height="22" Margin="204,353,0,0" TextWrapping="Wrap" Text="Станция метро:" VerticalAlignment="Top" Width="283"/>
+        <TextBlock HorizontalAlignment="Left" FontFamily="Cooper Black" Height="22" Margin="204,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283"><Run Text=" "/><Run Text="ID"/><Run Text=" курса:"/></TextBlock>
 
     </Grid>
 </Page>

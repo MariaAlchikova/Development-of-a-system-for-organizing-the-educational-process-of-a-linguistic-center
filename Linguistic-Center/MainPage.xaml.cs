@@ -197,5 +197,17 @@ namespace Linguistic_Center
 
             dgStudents.ItemsSource = students;
         }
+
+        //private void ChangeCourses_Click(object sender, RoutedEventArgs e)
+        //{
+        //    SaveData();
+        //    LoadData();
+        //}
+
+        //private void ChangeStudents_Click(object sender, RoutedEventArgs e)
+        //{
+        //    SaveData1();
+        //    LoadData1();
+        //}
     }
 }

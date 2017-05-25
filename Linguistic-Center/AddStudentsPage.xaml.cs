@@ -23,7 +23,7 @@ namespace Linguistic_Center
     public partial class AddStudentsPage : Page
     {
         List<Students> studentsnew = new List<Students>();
-        // List<Students> students;
+        
 
         public AddStudentsPage()
         {

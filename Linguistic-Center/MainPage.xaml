@@ -40,11 +40,11 @@
                     <TextBlock TextAlignment="Center" FontFamily="Cooper Black" FontSize="24" Margin="10,10,66.334,582" Grid.ColumnSpan="2"><Run Text="Учащиеся "/><Run Text="лингвистического"/><Run Text=" "/><Run Text="центра"/></TextBlock>
                     <Button x:Name="AddStudents" FontSize="16" ToolTip="Добавить" Background="Chocolate" FontFamily="Cooper Black" Click="AddStudents_Click" Content="Добавить " Height="40" Margin="409,104,191.333,488" Grid.Column="1"/>
                     <Button x:Name="DeleteStudents" ToolTip="Удалить" FontSize="16" Background="Chocolate" FontFamily="Cooper Black"  Click="DeleteStudents_Click" Content="Удалить" Height="40" Margin="409,186,191.333,406" Grid.Column="1"/>
-                    <Button x:Name="SerachStudents" Height="40" ToolTip="Найти" Content="Найти" HorizontalAlignment="Left" FontFamily="Cooper Black" Foreground="Black" Background="Chocolate" Click="SearchStudents_Click" FontSize="16" Margin="409.333,448,0,0" VerticalAlignment="Top" Width="168" Grid.Column="1"/>
-                    <TextBox x:Name="searchName" HorizontalAlignment="Left" ToolTip="Фамилия искомого учащегося" Height="40" Margin="409.333,379,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" Grid.Column="1" RenderTransformOrigin="0.55,3.677"/>
+                    <Button x:Name="SerachStudents" Height="40" ToolTip="Найти" Content="Найти" HorizontalAlignment="Left" FontFamily="Cooper Black" Foreground="Black" Background="Chocolate" Click="SearchStudents_Click" FontSize="16" Margin="409,448,0,0" VerticalAlignment="Top" Width="159" Grid.Column="1"/>
+                    <TextBox x:Name="searchName" HorizontalAlignment="Left" ToolTip="Фамилия искомого учащегося" Height="40" Margin="409,379,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Grid.Column="1" RenderTransformOrigin="0.55,3.677"/>
                     <Button x:Name="ChangeStudents" Content="Изменить" ToolTip="Изменить" HorizontalAlignment="Left" FontFamily="Cooper Black" Foreground="Black" Background="Chocolate" FontSize="16" Height="40" Margin="409.333,297,0,0" VerticalAlignment="Top" Width="168" Grid.Column="1" RenderTransformOrigin="0.479,3.065"/>
-                    <TextBox x:Name="studentsInfo" ToolTip="Найденный учащийся" HorizontalAlignment="Left" FontFamily="Cooper Black" Background="LightGoldenrodYellow" Height="40" Margin="10.333,448,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="307" Grid.Column="1"/>
-                    <DataGrid x:Name="dgStudents" ToolTip="Список учащихся" HorizontalAlignment="Left" Height="306" Margin="10,104,0,0" VerticalAlignment="Top" Width="307" Grid.Column="1"/>
+                    <TextBox x:Name="studentsInfo" ToolTip="Найденный учащийся" HorizontalAlignment="Left" FontFamily="Cooper Black" Background="LightGoldenrodYellow" Height="40" Margin="10,448,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="307" Grid.Column="1"/>
+                    <DataGrid x:Name="dgStudents" ToolTip="Список учащихся" HorizontalAlignment="Left" Height="306" Margin="10.333,104,0,0" VerticalAlignment="Top" Width="285" Grid.Column="1"/>
                 </Grid>
             </TabItem>
         </TabControl>
@@ -53,4 +53,5 @@
 </Page>
       
       
+
 
